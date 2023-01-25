@@ -18,7 +18,7 @@ creds = service_account.Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="days-877ee")
 
 hari = dt.now() #.strftime('%Y-%m-%d %H:%M:%S')
-lahir = dt.date(2022,1,2)
+lahir = datetime.datetime(1996,9,1)
 
 st.title("Aku Telah Hidup")
 st.header(f'{hari-lahir}')
