@@ -62,8 +62,8 @@ st.subheader('Ceritanya')
 for j,k,l in zip(data['cerita'], data['option'], data['tanggal']):
     cerita_list = list(j.split(" "))
     if k == 'Iya':
-        st.info(f'**{l}: {" ".join(cerita_list[:5])}**')
+        st.info(f'**{l.date}: {" ".join(cerita_list[:5])}**')
     else:
-        st.error(f'**{l} : {" ".join(cerita_list[:5])}**')
+        st.error(f'**{l.date} : {" ".join(cerita_list[:5])}**')
     st.write(j)
 
