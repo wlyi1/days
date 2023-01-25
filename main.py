@@ -18,7 +18,7 @@ key_dict = json.loads(st.secrets["textkey"])
 creds = service_account.Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="days-877ee")
 
-hari = dt.now()
+hari = dt.now(datetime.timezone.utc)
 st.write(hari) 
 lahir = datetime.datetime(1996,9,1, tzinfo=tzlocal())
 st.write('wekwek')
