@@ -19,7 +19,7 @@ db = firestore.Client(credentials=creds, project="days-877ee")
 
 hari = dt.now() 
 lahir = datetime.datetime(1996,9,1,6,0)
-
+st.write('wekwek')
 rdelta = relativedelta(hari, lahir)
 st.write('Age in years - ', rdelta.years)
 st.write('Age in months - ', rdelta.months)
