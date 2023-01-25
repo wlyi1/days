@@ -1,3 +1,2 @@
-streamlit_login_auth_ui.widgets
 google-cloud-firestore
 matplotlib
