@@ -30,10 +30,10 @@ st.write('Age in days - ', rdelta.days)
 st.write('Age in hours - ', rdelta.hours+7)
 
 st.title("Aku Telah Hidup")
-st.success(rdelta.years)
-st.info(rdelta.months)
-st.warning(rdelta.days)
-st.error(rdelta.hours)
+st.success(rdelta.years, ' Tahun')
+st.info(rdelta.months, ' Bulan')
+st.warning(rdelta.days, 'Hari')
+st.error(rdelta.hours + 7, 'Jam')
 
 
 with st.form(key='form1', clear_on_submit=True):
