@@ -1,5 +1,4 @@
 import streamlit as st
-from streamlit_login_auth_ui.widgets import __login__
 from google.cloud import firestore
 from google.oauth2 import service_account
 from google.cloud.firestore import Client
