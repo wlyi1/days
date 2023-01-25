@@ -21,6 +21,8 @@ lahir = datetime.datetime(1996,9,1)
 
 st.title("Aku Telah Hidup")
 st.header(f'{hari-lahir}')
+st.header(f'{hari.year-lahir.year}')
+st.header(f'{dt.date(2023,9,1)-dt.today()}')
 with st.form(key='form1', clear_on_submit=True):
     
     col1 = db.collection('daily')
