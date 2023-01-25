@@ -21,7 +21,7 @@ db = firestore.Client(credentials=creds, project="days-877ee")
 
 hari = dt.now().astimezone()
 
-st.write(hari) 
+
 lahir = datetime.datetime(1996,9,1, tzinfo=tzlocal())
 rdelta = relativedelta(hari, lahir)
 
@@ -62,8 +62,8 @@ st.subheader('Ceritanya')
 for j,k,l in zip(data['cerita'], data['option'], data['tanggal']):
     cerita_list = list(j.split(" "))
     if k == 'Iya':
-        st.info(f'**{k}: {" ".join(cerita_list[:7])}**')
+        st.info(f'**{l}: {" ".join(cerita_list[:5])}**')
     else:
-        st.error(f'**{k} : {" ".join(cerita_list[:7])}**')
+        st.error(f'**{l} : {" ".join(cerita_list[:5])}**')
     st.write(j)
 
