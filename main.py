@@ -13,12 +13,13 @@ import matplotlib.pyplot as plt
 import json
 from dateutil.relativedelta import relativedelta
 from dateutil.tz import *
+from zoneinfo import ZoneInfo
 
 key_dict = json.loads(st.secrets["textkey"])
 creds = service_account.Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="days-877ee")
 
-hari = dt.now().astimezone()
+hari = dt.now().astimezone().tzinfo
 
 st.write(hari) 
 lahir = datetime.datetime(1996,9,1, tzinfo=tzlocal())
