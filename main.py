@@ -22,8 +22,9 @@ lahir = datetime.datetime(1996,9,1)
 
 rdelta = relativedelta(hari, lahir)
 st.write('Age in years - ', rdelta.years)
-st.write('Age in months - ', rdelta.years*12 + rdelta.months)
+st.write('Age in months - ', rdelta.months)
 st.write('Age in days - ', rdelta.days)
+st.write('Age in hours - ', rdelta.hours)
 
 st.title("Aku Telah Hidup")
 st.header(f'{hari-lahir}')
