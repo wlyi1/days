@@ -26,7 +26,7 @@ lahir = datetime.datetime(1996,9,1, tzinfo=tzlocal())
 rdelta = relativedelta(hari, lahir)
 
 st.title("Aku Telah Hidup")
-st.success(f'**{rdelta.years} Tahun {rdelta.months} Bulan {rdelta.days} Hari {rdelta.hours + 7} Jam**')
+st.success(f'**{rdelta.years} Tahun - {rdelta.months} Bulan - {rdelta.days} Hari - {rdelta.hours + 7} Jam**')
 #st.info(f'**{rdelta.months} Bulan**')
 #st.warning(f'**{rdelta.days} Hari**')
 #st.error(f'**{rdelta.hours + 7} Jam**')
