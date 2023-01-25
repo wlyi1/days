@@ -18,7 +18,7 @@ creds = service_account.Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="days-877ee")
 
 hari = dt.now() 
-lahir = datetime.datetime(1996,9,1,0,0)
+lahir = datetime.datetime(1996,9,1,6,0)
 
 rdelta = relativedelta(hari, lahir)
 st.write('Age in years - ', rdelta.years)
@@ -29,7 +29,6 @@ st.write('Age in hours - ', rdelta.hours)
 st.title("Aku Telah Hidup")
 st.header(f'{hari-lahir}')
 st.header(f'{hari.year-lahir.year}')
-st.header(f'{dt.date(2023,9,1)-dt.today()}')
 with st.form(key='form1', clear_on_submit=True):
     
     col1 = db.collection('daily')
