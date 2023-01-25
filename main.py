@@ -27,7 +27,7 @@ rdelta = relativedelta(hari, lahir)
 st.write('Age in years - ', rdelta.years)
 st.write('Age in months - ', rdelta.months)
 st.write('Age in days - ', rdelta.days)
-st.write('Age in hours - ', rdelta.hours)
+st.write('Age in hours - ', rdelta.hours+7)
 
 st.title("Aku Telah Hidup")
 st.header(f'{hari-lahir}')
