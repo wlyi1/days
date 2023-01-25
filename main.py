@@ -17,12 +17,12 @@ key_dict = json.loads(st.secrets["textkey"])
 creds = service_account.Credentials.from_service_account_info(key_dict)
 db = firestore.Client(credentials=creds, project="days-877ee")
 
-hari = dt.now() #.strftime('%Y-%m-%d %H:%M:%S')
+hari = dt.now() 
 lahir = datetime.datetime(1996,9,1)
 
 rdelta = relativedelta(hari, lahir)
 st.write('Age in years - ', rdelta.years)
-st.write('Age in months - ', rdelta.months)
+st.write('Age in months - ', rdelta.years*12 + rdelta.months)
 st.write('Age in days - ', rdelta.days)
 
 st.title("Aku Telah Hidup")
