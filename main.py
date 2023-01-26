@@ -26,8 +26,8 @@ hari = dt.now().astimezone()
 lahir = datetime.datetime(1996,9,1, tzinfo=tzlocal())
 rdelta = relativedelta(hari, lahir)
 
-st.title("Aku Telah Hidup")
-st.success(f'**{rdelta.years} Tahun - {rdelta.months} Bulan - {rdelta.days} Hari - {rdelta.hours + 7} Jam**')
+#st.title("Aku Telah Hidup")
+#st.success(f'**{rdelta.years} Tahun - {rdelta.months} Bulan - {rdelta.days} Hari - {rdelta.hours + 7} Jam**')
 
 #Place Tet into Image
 img_url = 'https://raw.githubusercontent.com/wlyi1/days/main/Days.png'
@@ -41,7 +41,7 @@ img= ImageDraw.Draw(image)
 img.text((170,314), str(rdelta.years), font=font, fill=(91,112,143))
 img.text((573,304), str(rdelta.months), font=font1, fill=(91,112,143))
 img.text((573,420), str(rdelta.days), font=font1, fill=(91,112,143))
-img.text((573,539), str(rdelta.hours), font=font1, fill=(91,112,143))
+img.text((573,539), str(rdelta.hours + 7), font=font1, fill=(91,112,143))
 
 st.image(image)
 
