@@ -9,6 +9,7 @@ import streamlit.components.v1 as components
 from streamlit.components.v1 import html
 from PIL import Image
 from PIL import ImageDraw
+from PIL import ImageFont
 import matplotlib.pyplot as plt
 import json
 from dateutil.relativedelta import relativedelta
@@ -27,10 +28,21 @@ rdelta = relativedelta(hari, lahir)
 
 st.title("Aku Telah Hidup")
 st.success(f'**{rdelta.years} Tahun - {rdelta.months} Bulan - {rdelta.days} Hari - {rdelta.hours + 7} Jam**')
-#st.info(f'**{rdelta.months} Bulan**')
-#st.warning(f'**{rdelta.days} Hari**')
-#st.error(f'**{rdelta.hours + 7} Jam**')
 
+#Place Tet into Image
+image = 'https://raw.githubusercontent.com/wlyi1/random/main/Random/a3a.png'
+path_font = "Inter-Regular.ttf"
+
+font = ImageFont.truetype(path_font, 200)
+font1 = ImageFont.truetype(path_font, 65)
+
+img= ImageDraw.Draw(image)
+img.text((170,314), hari, font=font, fill=(91,112,143))
+img.text((573,304), hari, font=font1, fill=(91,112,143))
+img.text((573,420), hari, font=font1, fill=(91,112,143))
+img.text((573,539), hari, font=font1, fill=(91,112,143))
+
+st.image(image)
 
 with st.form(key='form1', clear_on_submit=True):
     
