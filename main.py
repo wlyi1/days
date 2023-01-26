@@ -30,8 +30,8 @@ rdelta = relativedelta(hari, lahir)
 #st.success(f'**{rdelta.years} Tahun - {rdelta.months} Bulan - {rdelta.days} Hari - {rdelta.hours + 7} Jam**')
 
 #Place Tet into Image
-img_url = 'https://raw.githubusercontent.com/wlyi1/days/main/frames.png'
-image = Image.open('Days.png')
+
+image = Image.open('frames.png')
 path_font = "Inter-Regular.ttf"
 
 font = ImageFont.truetype(path_font, 200)
