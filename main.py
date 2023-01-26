@@ -65,7 +65,7 @@ data = data.sort_values(by=['tanggal'], ascending=False)
 df = data['option'].value_counts().rename_axis('option').reset_index(name='counts')
 
 fig1, ax1 = plt.subplots(figsize=(3,3))
-ax1.pie(df.counts, autopct='%1.1f%%', labels = df.option, colors = ['#2C74B3', '#EB5353'], startangle=90)
+ax1.pie(df.counts, autopct='%1.1f%%', labels = df.option, colors = ['#06283D', '#DFF6FF'], startangle=90)
 
 st.subheader("**Kepuasan**")
 st.pyplot(fig1)
