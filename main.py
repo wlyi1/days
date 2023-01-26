@@ -30,7 +30,7 @@ st.title("Aku Telah Hidup")
 st.success(f'**{rdelta.years} Tahun - {rdelta.months} Bulan - {rdelta.days} Hari - {rdelta.hours + 7} Jam**')
 
 #Place Tet into Image
-image = 'https://raw.githubusercontent.com/wlyi1/random/main/Random/a3a.png'
+image = 'https://raw.githubusercontent.com/wlyi1/days/main/Days.png'
 path_font = "Inter-Regular.ttf"
 
 font = ImageFont.truetype(path_font, 200)
