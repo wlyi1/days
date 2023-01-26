@@ -38,10 +38,10 @@ font = ImageFont.truetype(path_font, 200)
 font1 = ImageFont.truetype(path_font, 65)
 
 img= ImageDraw.Draw(image)
-img.text((170,314), rdelta.years, font=font, fill=(91,112,143))
-img.text((573,304), rdelta.months, font=font1, fill=(91,112,143))
-img.text((573,420), rdelta.days, font=font1, fill=(91,112,143))
-img.text((573,539), rdelta.hours, font=font1, fill=(91,112,143))
+img.text((170,314), str(rdelta.years), font=font, fill=(91,112,143))
+img.text((573,304), st(rdelta.months), font=font1, fill=(91,112,143))
+img.text((573,420), str(rdelta.days), font=font1, fill=(91,112,143))
+img.text((573,539), str(rdelta.hours), font=font1, fill=(91,112,143))
 
 st.image(image)
 
