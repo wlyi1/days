@@ -30,17 +30,18 @@ st.title("Aku Telah Hidup")
 st.success(f'**{rdelta.years} Tahun - {rdelta.months} Bulan - {rdelta.days} Hari - {rdelta.hours + 7} Jam**')
 
 #Place Tet into Image
-image = 'https://raw.githubusercontent.com/wlyi1/days/main/Days.png'
+img_url = 'https://raw.githubusercontent.com/wlyi1/days/main/Days.png'
+image = Image.open('Days.png')
 path_font = "Inter-Regular.ttf"
 
 font = ImageFont.truetype(path_font, 200)
 font1 = ImageFont.truetype(path_font, 65)
 
 img= ImageDraw.Draw(image)
-img.text((170,314), hari, font=font, fill=(91,112,143))
-img.text((573,304), hari, font=font1, fill=(91,112,143))
-img.text((573,420), hari, font=font1, fill=(91,112,143))
-img.text((573,539), hari, font=font1, fill=(91,112,143))
+img.text((170,314), rdelta.years, font=font, fill=(91,112,143))
+img.text((573,304), rdelta.months, font=font1, fill=(91,112,143))
+img.text((573,420), rdelta.days, font=font1, fill=(91,112,143))
+img.text((573,539), rdelta.hours, font=font1, fill=(91,112,143))
 
 st.image(image)
 
