@@ -66,7 +66,7 @@ if st.session_state['LOGGED_IN'] == True:
         lahir = datetime.datetime(1996,9,1, tzinfo=tzlocal())
         st.write(lahir)
         st.write(type(lahir))
-        st.write(user_born)
+        st.write(user_born.values)
         st.write(type(user_born))
         rdelta = relativedelta(hari, user_born)
         #Place Tet into Image
