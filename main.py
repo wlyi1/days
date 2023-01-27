@@ -92,7 +92,7 @@ if st.session_state['LOGGED_IN'] == True:
 
         with st.form(key='form1', clear_on_submit=True):
             
-            col1 = db.collection('daily')
+            col1 = db.collection(f'{user_name}')
             st.write("Apakah aku puas dengan hari ini?")
             option = st.radio(' ', ('Iya', 'Engga'), horizontal=True)
             cerita = st.text_area(label='Yang aku dapat hari ini', height=300)
