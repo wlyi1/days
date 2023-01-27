@@ -71,7 +71,7 @@ if st.session_state['LOGGED_IN'] == True:
         uss = pd.to_datetime(user_born)
         st.write(pd.to_datetime(user_born))
         st.write(type(uss))
-        st.write(uss['lahir'], type(uss['lahir']))
+        st.write(list(uss)[0], type(uss))
         st.write(type(user_born.values))
         rdelta = relativedelta(hari, user_born)
         #Place Tet into Image
