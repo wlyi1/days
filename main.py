@@ -68,8 +68,9 @@ if st.session_state['LOGGED_IN'] == True:
         lahir = datetime.datetime(1996,9,1, tzinfo=tzlocal())
         st.write(lahir)
         st.write(type(lahir))
+        uss = pd.to_datetime(user_born)
         st.write(pd.to_datetime(user_born))
-        #st.write(user_born[0])
+        st.write(uss, type(uss))
         st.write(type(user_born.values))
         rdelta = relativedelta(hari, user_born)
         #Place Tet into Image
