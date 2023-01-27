@@ -40,7 +40,7 @@ user_name = __login__obj.cookies['__streamlit_login_signup_ui_username__']
 stream_lahir = list(db_lahir.stream())
 list_lahir = list(map(lambda x: x.to_dict(), stream_lahir))
 data_lahir = pd.DataFrame(list_lahir)
-user_lahir = data_lahir.sort_values(by=['tanggal'], ascending=False)
+user_lahir = data_lahir.sort_values(by=['lahir'], ascending=False)
 
 if st.session_state['LOGGED_IN'] == True:
     if user_name not in data_lahir['username']:     
