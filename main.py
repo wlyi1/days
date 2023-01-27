@@ -66,14 +66,14 @@ if st.session_state['LOGGED_IN'] == True:
         # data lahir users
         user_born = data_lahir['lahir'].loc[user_lahir['username'] == user_name]
         lahir = datetime.datetime(1996,9,1, tzinfo=tzlocal())
-        st.write(lahir)
-        st.write(type(lahir))
+        #st.write(lahir)
+        #st.write(type(lahir))
         uss = pd.to_datetime(user_born)
-        st.write(pd.to_datetime(user_born))
-        st.write(type(uss))
+        #st.write(pd.to_datetime(user_born))
+        #st.write(type(uss))
         dt_tgl = list(uss)[0]
-        st.write(list(uss)[0], type(list(uss)[0]))
-        st.write(type(user_born.values))
+        #st.write(list(uss)[0], type(list(uss)[0]))
+        #st.write(type(user_born.values))
         rdelta = relativedelta(hari, dt_tgl)
         #Place Tet into Image
         image = Image.open('frames.png')
@@ -102,7 +102,7 @@ if st.session_state['LOGGED_IN'] == True:
                 st.write('Terimakasih 👍')
 
 
-        doc = db.collection('daily')
+        doc = db.collection(f'{user_name}')
         datas = list(doc.stream())
         list_random = list(map(lambda x: x.to_dict(), datas))
         data = pd.DataFrame(list_random)
