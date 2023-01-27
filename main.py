@@ -68,7 +68,7 @@ if st.session_state['LOGGED_IN'] == True:
         st.write(lahir)
         st.write(type(lahir))
         st.write(user_born[0])
-        st.write(type(user_born))
+        st.write(type(user_born[0]))
         rdelta = relativedelta(hari, user_born)
         #Place Tet into Image
         image = Image.open('frames.png')
