@@ -71,9 +71,10 @@ if st.session_state['LOGGED_IN'] == True:
         uss = pd.to_datetime(user_born)
         st.write(pd.to_datetime(user_born))
         st.write(type(uss))
-        st.write(list(uss)[0], type(uss))
+        dt_tgl = list(uss)[0]
+        st.write(list(uss)[0], type(list(uss)[0]))
         st.write(type(user_born.values))
-        rdelta = relativedelta(hari, user_born)
+        rdelta = relativedelta(hari, dt_tgl)
         #Place Tet into Image
         image = Image.open('frames.png')
         path_font = "Inter-Regular.ttf"
