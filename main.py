@@ -68,9 +68,9 @@ if st.session_state['LOGGED_IN'] == True:
         lahir = datetime.datetime(1996,9,1, tzinfo=tzlocal())
         st.write(lahir)
         st.write(type(lahir))
-        st.write(user_born[0])
+        #st.write(user_born[0])
         st.write(type(user_born.values))
-        rdelta = relativedelta(hari, user_born[0])
+        rdelta = relativedelta(hari, user_born)
         #Place Tet into Image
         image = Image.open('frames.png')
         path_font = "Inter-Regular.ttf"
