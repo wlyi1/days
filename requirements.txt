@@ -1,3 +1,4 @@
 google-cloud-firestore
 matplotlib
 streamlit_login_auth_ui
+argon2-cffi
