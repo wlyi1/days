@@ -44,7 +44,7 @@ user_lahir = data_lahir.sort_values(by=['lahir'], ascending=False)
 
 if st.session_state['LOGGED_IN'] == True:
     st.write(user_name)
-    st.write(data_lahir['username'])
+    st.write(data_lahir['username'].values)
     st.write(user_name not in data_lahir['username'])
     if user_name not in data_lahir['username']:     
         #define tanggal user
