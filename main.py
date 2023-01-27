@@ -51,7 +51,7 @@ if st.session_state['LOGGED_IN'] == True:
         with st.form(key='form1', clear_on_submit=True):
             db_lahir = db.collection('lahirs')
             st.write("Kapan kamu lahir? 👶")
-            tgl_user = st.date_input('Tanggal Lahir', min_value=datetime.date(1975,1,1), max_value=datetime.date(2010,1,1))
+            tgl_user = st.date_input('Tanggal Lahir', value=datetime.date(1995,1,1), min_value=datetime.date(1975,1,1), max_value=datetime.date(2010,1,1))
             tgl_user = pd.Timestamp(tgl_user)
             submit_button = st.form_submit_button(label='Kirim')
             if submit_button:
