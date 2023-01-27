@@ -113,9 +113,9 @@ if st.session_state['LOGGED_IN'] == True:
             for j,k,l in zip(data['cerita'], data['option'], data['tanggal']):
                 cerita_list = list(j.split(" "))
                 if k == 'Iya':
-                    st.info(f'**{l.date()}: {" ".join(cerita_list[:5]).title()}**')
+                    st.info(f'{l.date()}: {" ".join(cerita_list[:5]).title()}')
                 else:
-                    st.error(f'**{l.date()} : {" ".join(cerita_list[:5]).title()}**')
+                    st.error(f'{l.date()} : {" ".join(cerita_list[:5]).title()}')
                 st.write(j)
         except KeyError:
             print('Isi dulu cerita hari ini')
