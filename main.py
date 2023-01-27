@@ -63,7 +63,7 @@ if st.session_state['LOGGED_IN'] == True:
 
         # data lahir users
         user_born = data_lahir['lahir'].loc[user_lahir['username'] == user_name]
-
+        st.write(user_born)
         rdelta = relativedelta(hari, user_born)
         #Place Tet into Image
         image = Image.open('frames.png')
