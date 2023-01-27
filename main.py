@@ -49,7 +49,7 @@ if st.session_state['LOGGED_IN'] == True:
     #st.write(user_name not in data_lahir['username'].values)
     if user_name not in data_lahir['username'].values:     
         #define tanggal user
-        st.header('Hello user baru, silahkan isi tanggal lahir dahulu')
+        st.header(f'Hello {user_name} , silahkan isi tanggal lahir dahulu')
         with st.form(key='form1', clear_on_submit=True):
             db_lahir = db.collection('lahirs')
             st.write("Kapan kamu lahir?")
