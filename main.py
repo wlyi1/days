@@ -36,7 +36,6 @@ __login__obj = __login__(auth_token = "courier_auth_token",
 
 LOGGED_IN= __login__obj.build_login_ui()
 
-user_name = __login__obj.cookies['__streamlit_login_signup_ui_username__']
 stream_lahir = list(db_lahir.stream())
 list_lahir = list(map(lambda x: x.to_dict(), stream_lahir))
 data_lahir = pd.DataFrame(list_lahir)
@@ -44,9 +43,8 @@ data_lahir['lahir'] = pd.to_datetime(data_lahir['lahir'])
 user_lahir = data_lahir.sort_values(by=['lahir'], ascending=False)
 
 if st.session_state['LOGGED_IN'] == True:
-    #st.write(user_name)
-    #st.write(data_lahir['username'].values)
-    #st.write(user_name not in data_lahir['username'].values)
+    user_name = __login__obj.cookies['__streamlit_login_signup_ui_username__']
+    
     if user_name not in data_lahir['username'].values:     
         #define tanggal user
         st.header(f'Hello {user_name} , silahkan isi tanggal lahir dahulu')
@@ -66,15 +64,10 @@ if st.session_state['LOGGED_IN'] == True:
         # data lahir users
         user_born = data_lahir['lahir'].loc[user_lahir['username'] == user_name]
         lahir = datetime.datetime(1996,9,1, tzinfo=tzlocal())
-        #st.write(lahir)
-        #st.write(type(lahir))
         uss = pd.to_datetime(user_born)
-        #st.write(pd.to_datetime(user_born))
-        #st.write(type(uss))
         dt_tgl = list(uss)[0]
-        #st.write(list(uss)[0], type(list(uss)[0]))
-        #st.write(type(user_born.values))
         rdelta = relativedelta(hari, dt_tgl)
+        
         #Place Tet into Image
         image = Image.open('frames.png')
         path_font = "Inter-Regular.ttf"
