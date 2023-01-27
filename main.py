@@ -101,27 +101,28 @@ if st.session_state['LOGGED_IN'] == True:
                 col1.add({"option": option, "tanggal": hari, "cerita": cerita})
                 st.write('Terimakasih 👍')
 
+        try:
+            doc = db.collection(f'{user_name}')
+            datas = list(doc.stream())
+            list_random = list(map(lambda x: x.to_dict(), datas))
+            data = pd.DataFrame(list_random)
+            data = data.sort_values(by=['tanggal'], ascending=False)
+            df = data['option'].value_counts().rename_axis('option').reset_index(name='counts')
 
-        doc = db.collection(f'{user_name}')
-        datas = list(doc.stream())
-        list_random = list(map(lambda x: x.to_dict(), datas))
-        data = pd.DataFrame(list_random)
-        data = data.sort_values(by=['tanggal'], ascending=False)
-        df = data['option'].value_counts().rename_axis('option').reset_index(name='counts')
+            fig1, ax1 = plt.subplots(figsize=(3,3))
+            ax1.pie(df.counts, autopct='%1.1f%%', labels = df.option, colors = ['#FF5E63', '#3CC0FE'], startangle=90)
 
-        fig1, ax1 = plt.subplots(figsize=(3,3))
-        ax1.pie(df.counts, autopct='%1.1f%%', labels = df.option, colors = ['#FF5E63', '#3CC0FE'], startangle=90)
+            st.subheader("**Kepuasan**")
+            st.pyplot(fig1)
 
-        st.subheader("**Kepuasan**")
-        st.pyplot(fig1)
+            st.subheader('Ceritanya')
 
-        st.subheader('Ceritanya')
-
-        for j,k,l in zip(data['cerita'], data['option'], data['tanggal']):
-            cerita_list = list(j.split(" "))
-            if k == 'Iya':
-                st.info(f'**{l.date()}: {" ".join(cerita_list[:5]).title()}**')
-            else:
-                st.error(f'**{l.date()} : {" ".join(cerita_list[:5]).title()}**')
-            st.write(j)
-
+            for j,k,l in zip(data['cerita'], data['option'], data['tanggal']):
+                cerita_list = list(j.split(" "))
+                if k == 'Iya':
+                    st.info(f'**{l.date()}: {" ".join(cerita_list[:5]).title()}**')
+                else:
+                    st.error(f'**{l.date()} : {" ".join(cerita_list[:5]).title()}**')
+                st.write(j)
+        except KeyError:
+            print('Isi dulu cerita hari ini')
