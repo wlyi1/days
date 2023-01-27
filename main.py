@@ -54,6 +54,7 @@ if st.session_state['LOGGED_IN'] == True:
             db_lahir = db.collection('lahirs')
             st.write("Kapan kamu lahir?")
             tgl_user = st.date_input('Tanggal Lahir')
+            tgl_user = pd.Timestamp(tgl_user)
             submit_button = st.form_submit_button(label='Kirim')
             if submit_button:
                 db_lahir.add({"username": user_name, "lahir": tgl_user})
