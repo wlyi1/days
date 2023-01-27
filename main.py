@@ -43,10 +43,10 @@ data_lahir = pd.DataFrame(list_lahir)
 user_lahir = data_lahir.sort_values(by=['lahir'], ascending=False)
 
 if st.session_state['LOGGED_IN'] == True:
-    st.write(user_name)
-    st.write(data_lahir['username'].values)
-    st.write(user_name not in data_lahir['username'].values)
-    if user_name not in data_lahir['username']:     
+    #st.write(user_name)
+    #st.write(data_lahir['username'].values)
+    #st.write(user_name not in data_lahir['username'].values)
+    if user_name not in data_lahir['username'].values:     
         #define tanggal user
         st.header('Hello user baru, silahkan isi tanggal lahir dahulu')
         with st.form(key='form1', clear_on_submit=True):
