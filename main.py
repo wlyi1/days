@@ -47,17 +47,17 @@ if st.session_state['LOGGED_IN'] == True:
     
     if user_name not in data_lahir['username'].values:     
         #define tanggal user
-        st.header(f'Hello {user_name} , silahkan isi tanggal lahir dahulu')
+        st.header(f'Hallo {user_name}, isi tanggal lahir dulu ya 😃')
         with st.form(key='form1', clear_on_submit=True):
             db_lahir = db.collection('lahirs')
-            st.write("Kapan kamu lahir?")
-            tgl_user = st.date_input('Tanggal Lahir')
+            st.write("Kapan kamu lahir? 👶")
+            tgl_user = st.date_input('Tanggal Lahir', min_value=datetime.date(1975,1,1), max_value=datetime.date(2010,1,1))
             tgl_user = pd.Timestamp(tgl_user)
             submit_button = st.form_submit_button(label='Kirim')
             if submit_button:
                 db_lahir.add({"username": user_name, "lahir": tgl_user})
                 st.write('Terimakasih 👍')
-                st.write('Silahkan Login Kembali')
+                st.write('Logout & Silahkan Login Kembali 🤳🏻')
     
     else:
 
@@ -86,9 +86,9 @@ if st.session_state['LOGGED_IN'] == True:
         with st.form(key='form1', clear_on_submit=True):
             
             col1 = db.collection(f'{user_name}')
-            st.write("Apakah aku puas dengan hari ini?")
+            st.write("Apakah aku puas dengan hari ini 👀?")
             option = st.radio(' ', ('Iya', 'Engga'), horizontal=True)
-            cerita = st.text_area(label='Yang aku dapat hari ini', height=300)
+            cerita = st.text_area(label='Yang aku dapat hari ini 👇', height=300)
             submit_button = st.form_submit_button(label='Kirim')
             if submit_button:
                 col1.add({"option": option, "tanggal": hari, "cerita": cerita})
@@ -105,10 +105,10 @@ if st.session_state['LOGGED_IN'] == True:
             fig1, ax1 = plt.subplots(figsize=(3,3))
             ax1.pie(df.counts, autopct='%1.1f%%', labels = df.option, colors = ['#FF5E63', '#3CC0FE'], startangle=90)
 
-            st.subheader("**Kepuasan**")
+            st.subheader("**Persentase Kepuasan Hidup 😊 😟**")
             st.pyplot(fig1)
 
-            st.subheader('Ceritanya')
+            st.subheader('Cerita Harian ✍️')
 
             for j,k,l in zip(data['cerita'], data['option'], data['tanggal']):
                 cerita_list = list(j.split(" "))
